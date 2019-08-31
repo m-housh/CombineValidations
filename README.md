@@ -1,6 +1,6 @@
 # CombineValidations
 
-[![Build Status](https://travis-ci.org/m-housh/CombineValidations.svg?branch=master)](https://travis-ci.org/m-housh/CombineValidations)
+[![Build Status](https://travis-ci.org/m-housh/CombineValidations.svg?branch=develop)](https://travis-ci.org/m-housh/CombineValidations)
 [![codecov](https://codecov.io/gh/m-housh/CombineValidations/branch/master/graph/badge.svg)](https://codecov.io/gh/m-housh/CombineValidations)
 [![SPM compatible](https://img.shields.io/badge/SPM-Compatible-blueviolet.svg?style=flat)](https://swift.org/package-manager/)
 [![Swift](https://img.shields.io/badge/iOS-13-orange.svg)](https://swift.org)
