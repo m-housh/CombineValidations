@@ -3,8 +3,8 @@ osx_image: xcode11
 before_install:
     - swift package resolve
     - gem install xcpretty
-script:
     - swift package generate-xcodeproj
+script:
     - set -o pipefail && xcodebuild -project CombineValidations.xcodeproj -scheme CombineValidations-Package -destination 'platform=iOS Simulator,name=iPhone Xr,OS=13.0' -enableCodeCoverage YES clean build test | xcpretty
 environment:
     CODECOV_TOKEN="451960e2-2bd3-44ab-83e6-08e41f7cfdfa"
