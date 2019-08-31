@@ -179,50 +179,31 @@ final class CombineValidationsTests: XCTestCase {
             .sink { _ in XCTFail() }
     }
     
-<<<<<<< HEAD
-    
-    func testValidatedPublisher() {
-        _ = Publishers.ValidatedPublisher("foo-bar", !.empty && .count(3...))
-            .sink { XCTAssertEqual($0, "foo-bar")}
-=======
     func testValidatedPublisher() {
         _ = Publishers.ValidatedPublisher("foo-bar", !.empty && .count(3...))
             .sink { XCTAssertEqual($0, "foo-bar") }
->>>>>>> master
         
         _ = Publishers.ValidatedPublisher("fo", !.empty && .count(3...))
             .sink { XCTAssertNil($0) }
         
         _ = Publishers.ValidatedPublisher(MyValidatable("foo-bar"))
-<<<<<<< HEAD
             .sink { XCTAssertEqual($0!.name, "foo-bar")}
         
         _ = Publishers.ValidatedPublisher(MyValidatable())
             .sink { XCTAssertNil($0) }
-=======
-            .sink { XCTAssertEqual($0!.name, "foo-bar") }
                
-        _ = Publishers.ValidatedPublisher(MyValidatable())
-            .sink { XCTAssertNil($0) }
-        
-        
->>>>>>> master
     }
+        
     
     func testTryValidatedPublisher() {
         _ = Publishers.TryValidatedPublisher("foo-bar", !.empty && .count(3...))
             .replaceError(with: "failed")
-<<<<<<< HEAD
             .sink { XCTAssertEqual($0, "foo-bar")}
-=======
-            .sink { XCTAssertEqual($0, "foo-bar") }
->>>>>>> master
-        
+   
         _ = Publishers.TryValidatedPublisher("fo", !.empty && .count(3...))
             .replaceError(with: "failed")
             .sink { XCTAssertEqual($0, "failed") }
         
-<<<<<<< HEAD
         
         _ = Publishers.TryValidatedPublisher(MyValidatable("foo-bar"))
             .replaceError(with: MyValidatable("failed"))
@@ -231,16 +212,6 @@ final class CombineValidationsTests: XCTestCase {
         _ = Publishers.TryValidatedPublisher(MyValidatable())
             .replaceError(with: MyValidatable("failed"))
             .sink { XCTAssertEqual($0.name, "failed")}
-=======
-        _ = Publishers.TryValidatedPublisher(MyValidatable("foo-bar"))
-            .replaceError(with: MyValidatable("failed"))
-            .sink { XCTAssertEqual($0.name, "foo-bar") }
-               
-        _ = Publishers.TryValidatedPublisher(MyValidatable())
-            .replaceError(with: MyValidatable("failed"))
-            .sink { XCTAssertEqual($0.name, "failed") }
-        
->>>>>>> master
         
     }
     

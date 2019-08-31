@@ -1,9 +1,4 @@
 //
-<<<<<<< HEAD
-//  File.swift
-=======
-//  Publishers+TryValidatedPublisher.swift
->>>>>>> master
 //  
 //
 //  Created by Michael Housh on 8/31/19.
@@ -15,28 +10,7 @@ import Validations
 
 
 extension Publishers {
-    
-    
-<<<<<<< HEAD
-    public struct TryValidatedPublisher<T>: Publisher {
-        public typealias Output = T
-        public typealias Failure = BasicValidationError
         
-        let output: T
-        let validator: Validator<T>
-        
-        public init(_ output: T, _ validator: Validator<T>) {
-            self.validator = validator
-            self.output = output
-        }
-        
-        public func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
-            let subscription = _ValidationSubscription(downstream: subscriber, output: validated)
-            subscriber.receive(subscription: subscription)
-        }
-        
-        private var validated: Result<T, BasicValidationError> {
-=======
     /**
      # TryValidatedPublisher
      
@@ -63,7 +37,6 @@ extension Publishers {
         }
         
         private func validated() -> Result<T, BasicValidationError> {
->>>>>>> master
             do {
                 try validator.validate(output)
                 return .success(output)
@@ -74,7 +47,6 @@ extension Publishers {
     }
 }
 
-<<<<<<< HEAD
 extension Publishers.TryValidatedPublisher where T: Validatable {
     
     public init(_ output: T) {
@@ -83,18 +55,12 @@ extension Publishers.TryValidatedPublisher where T: Validatable {
     }
 }
 
-extension Publishers.TryValidatedPublisher {
-    
-    final class _ValidationSubscription<Downstream: Subscriber>: Subscription where Downstream.Input == Output, Downstream.Failure == Failure {
-        
-        var downstream: Downstream?
-=======
+
 extension Publishers.TryValidatedPublisher {
     
     final class _ValidatedSubscription<Downstream: Subscriber>: Subscription where Downstream.Input == Output, Downstream.Failure == Failure {
         
         var downstream: Downstream? = nil
->>>>>>> master
         let output: Result<T, BasicValidationError>
         
         init(downstream: Downstream, output: Result<T, BasicValidationError>) {
@@ -102,53 +68,22 @@ extension Publishers.TryValidatedPublisher {
             self.output = output
         }
         
-<<<<<<< HEAD
         func cancel() {
             downstream = nil
         }
         
         func request(_ demand: Subscribers.Demand) {
             guard let downstream = self.downstream, demand > 0 else { return }
-=======
-        func request(_ demand: Subscribers.Demand) {
-            guard let downstream = self.downstream, demand > 0 else {
-                return
-            }
->>>>>>> master
-            
+        
             switch output {
             case .success(let output):
                 _ = downstream.receive(output)
                 downstream.receive(completion: .finished)
-<<<<<<< HEAD
             case .failure(let error):
                 downstream.receive(completion: .failure(error))
             }
             cancel()
         }
         
-=======
-                cancel()
-
-            case .failure(let error):
-                downstream.receive(completion: .failure(error))
-            }
-            
-        }
-        
-        func cancel() {
-            downstream = nil
-        }
     }
 }
-
-
-extension Publishers.TryValidatedPublisher where T: Validatable {
-    
-    public init(_ output: T) {
-        self.output = output
-        self.validator = Validator<T>.valid
->>>>>>> master
-    }
-}
-

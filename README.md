@@ -57,6 +57,9 @@ _ = Publishers.TryValidatedPublisher("foo-bar", !.empty && .count(3...))
 
 
 ```
+--------
+
+There are also three operators that can be applied to existing publishers.
 
 #### Validate
 
@@ -116,6 +119,7 @@ _ = Just("foo")
 
 
 ```
+-------
 
 #### PassthroughValidatedSubject
 
