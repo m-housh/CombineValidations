@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/m-housh/CombineValidations.svg?branch=master)](https://travis-ci.org/m-housh/CombineValidations)
 [![codecov](https://codecov.io/gh/m-housh/CombineValidations/branch/master/graph/badge.svg)](https://codecov.io/gh/m-housh/CombineValidations)
-[![SPM compatible](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager/)
+[![SPM compatible](https://img.shields.io/badge/SPM-Compatible-blueviolet.svg?style=flat)](https://swift.org/package-manager/)
 [![Swift](https://img.shields.io/badge/iOS-13-orange.svg)](https://swift.org)
 [![Xcode](https://img.shields.io/badge/Xcode-11-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
@@ -15,6 +15,9 @@ for more examples.
 
 
 ## Usage
+-----------
+
+### Top Level Publishers
 ------
 
 
@@ -57,6 +60,8 @@ _ = Publishers.TryValidatedPublisher("foo-bar", !.empty && .count(3...))
 
 
 ```
+
+### Operators
 --------
 
 There are also three operators that can be applied to existing publishers.
@@ -119,6 +124,8 @@ _ = Just("foo")
 
 
 ```
+
+### Subjects
 -------
 
 #### PassthroughValidatedSubject
@@ -142,6 +149,8 @@ subject.send("")
 
 ```
 
+### Validatable Objects
+--------------
 
 All of the above also work with any type that implements the `Validatable` protocol.
 
