@@ -1,0 +1,152 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publisher+TryValidate.swift",
+      "line": 50,
+      "symbol": "TryValidationPublisher.upstream",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publisher+TryValidate.swift",
+      "line": 51,
+      "symbol": "TryValidationPublisher.validator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publisher+Validate.swift",
+      "line": 76,
+      "symbol": "ValidationPublisher.upstream",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publisher+Validate.swift",
+      "line": 77,
+      "symbol": "ValidationPublisher.validator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+TryValidatedPublisher.swift",
+      "line": 25,
+      "symbol": "Publishers.TryValidatedPublisher.output",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+TryValidatedPublisher.swift",
+      "line": 26,
+      "symbol": "Publishers.TryValidatedPublisher.validator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+TryValidatedPublisher.swift",
+      "line": 28,
+      "symbol": "Publishers.TryValidatedPublisher.init(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+TryValidatedPublisher.swift",
+      "line": 52,
+      "symbol": "Publishers.TryValidatedPublisher.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+ValidatedPublisher.swift",
+      "line": 25,
+      "symbol": "Publishers.ValidatedPublisher.output",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+ValidatedPublisher.swift",
+      "line": 26,
+      "symbol": "Publishers.ValidatedPublisher.validator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+ValidatedPublisher.swift",
+      "line": 28,
+      "symbol": "Publishers.ValidatedPublisher.init(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/Publishers+ValidatedPublisher.swift",
+      "line": 52,
+      "symbol": "Publishers.ValidatedPublisher.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 13,
+      "symbol": "PassthroughValidatedSubject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 15,
+      "symbol": "PassthroughValidatedSubject.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 19,
+      "symbol": "PassthroughValidatedSubject.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 25,
+      "symbol": "PassthroughValidatedSubject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 27,
+      "symbol": "PassthroughValidatedSubject.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 33,
+      "symbol": "ValidatedSubject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 38,
+      "symbol": "ValidatedSubject.validator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidatedSubject.swift",
+      "line": 41,
+      "symbol": "ValidatedSubject.init(validator:subject:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations/Sources/CombineValidations/ValidationPublisherError.swift",
+      "line": 16,
+      "symbol": "ValidationPublisherError.hasCompleted",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/michael/Documents/Projects/Xcode/MyProjects/HHE/DataModels/CombineValidations"
+}

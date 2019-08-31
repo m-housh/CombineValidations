@@ -10,3 +10,12 @@ environment:
     CODECOV_TOKEN="cd76b802-708b-4805-91e9-f0f32cdd3a1e"
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - gem install jazzy
+  - make documentation
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  local_dirs: docs
+  on:
+      branch: master
