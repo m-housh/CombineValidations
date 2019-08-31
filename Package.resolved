@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Validations",
+        "repositoryURL": "https://github.com/m-housh/Validations.git",
+        "state": {
+          "branch": null,
+          "revision": "d432bab8001de7f089b95d63e064b5a35e90b909",
+          "version": "0.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
