@@ -8,3 +8,9 @@ documentation:
 		--title CombineValidations \
 		--clean
 	@rm -rf build
+
+mergeAndPush:
+	@git checkout master
+	@git merge develop master
+	@git push
+	@git checkout develop
