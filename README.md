@@ -22,7 +22,7 @@ For full API documentation you can click [here](https://m-housh.github.io/Combin
 ## Installation
 -----------
 Just add as a package dependency to your Xcode Project or to your `Package.swift`.
-```
+``` swift
 // swift-tools-version:5.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
