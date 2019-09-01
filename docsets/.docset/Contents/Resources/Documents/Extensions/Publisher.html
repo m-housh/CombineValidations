@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Publisher Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Extension/Publisher" class="dashAnchor"></a>
+
+    <a title="Publisher Extension Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          CombineValidations
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      Publisher Extension Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PassthroughValidatedSubject.html">PassthroughValidatedSubject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ValidatedSubject.html">ValidatedSubject</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ValidationPublisherError.html">ValidationPublisherError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Publishers.html">Publishers</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Publishers/TryValidatedPublisher.html">– TryValidatedPublisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Publishers/ValidatedPublisher.html">– ValidatedPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ValidationPublisher.html">ValidationPublisher</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Publisher</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)</span>
+<span class="kd">extension</span> <span class="kt">Publisher</span></code></pre>
+
+                </div>
+              </div>
+            
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE15compactValidateyAD07CompacteB0VyxG0C09ValidatorVyqd__G6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/compactValidate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE15compactValidateyAD07CompacteB0VyxG0C09ValidatorVyqd__G6OutputQzRsd__lF">compactValidate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid non-nil objects downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">"Foo-bar"</span><span class="p">)</span>
+         <span class="o">.</span><span class="nf">validate</span><span class="p">(</span><span class="o">!.</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">count</span><span class="p">(</span><span class="mi">3</span><span class="o">...</span><span class="p">))</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Foo-bar"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">compactValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">validator</span><span class="p">:</span> <span class="kt">Validator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The validator to use to validate the upstream output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE15compactValidateyAD07CompacteB0VyxG0C09ValidatorVyqd__Gyc6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/compactValidate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE15compactValidateyAD07CompacteB0VyxG0C09ValidatorVyqd__Gyc6OutputQzRsd__lF">compactValidate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid non-nil objects downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">"Foo-bar"</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">validate</span> <span class="p">{</span> <span class="o">!.</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">count</span><span class="p">(</span><span class="mi">3</span><span class="o">...</span><span class="p">)</span> <span class="p">}</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Foo-bar"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">compactValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">validator</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that returns validator to use to validate the upstream output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE15compactValidateAD07CompacteB0VyxGy0C011ValidatableRd__6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/compactValidate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE15compactValidateAD07CompacteB0VyxGy0C011ValidatableRd__6OutputQzRsd__lF">compactValidate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output that is <code>Validatable</code> and sends valid non-nil objects downstream.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code>Validatable</code>
+
+</div>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="kt">MyValidatable</span><span class="p">(</span><span class="s">"foo-bar"</span><span class="p">))</span>
+         <span class="o">.</span><span class="nf">validate</span><span class="p">()</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "foo-bar"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">compactValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Validatable</span><span class="p">,</span> <span class="kt">T</span> <span class="o">==</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE15compactValidate4name_AD07CompacteB0VyxGSS_qd__Sgqd__ct6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/compactValidate(name:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE15compactValidate4name_AD07CompacteB0VyxGSS_qd__Sgqd__ct6OutputQzRsd__lF">compactValidate(name:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid non-nil objects downstream.  This allows you
+  to create a custom <code>Validator</code> on the fly.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code>Validator</code></p>
+
+</div>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">"foo-bar"</span><span class="p">)</span>
+         <span class="o">.</span><span class="nf">compactValidate</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"only foo-bar"</span><span class="p">)</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+             <span class="k">guard</span> <span class="n">string</span><span class="o">.</span><span class="nf">lowercased</span><span class="p">()</span> <span class="o">==</span> <span class="s">"foo-bar"</span> <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="kc">nil</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="n">string</span>
+         <span class="p">}</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+
+     <span class="c1">// "foo-bar"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">compactValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">closure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CompactValidatePublisher.html">CompactValidatePublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name for the custom validator.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>closure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Closure that takes an instance and returns the instance if valid or <code>nil</code> if not valid.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE11tryValidateyAD013TryValidationB0VyxG0C09ValidatorVyqd__G6OutputQzRsd__AI05BasicG5ErrorV7FailureRtzlF"></a>
+                    <a name="//apple_ref/swift/Method/tryValidate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE11tryValidateyAD013TryValidationB0VyxG0C09ValidatorVyqd__G6OutputQzRsd__AI05BasicG5ErrorV7FailureRtzlF">tryValidate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid objects or a <code>BasicValidationError</code> downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+         <span class="o">.</span><span class="nf">tryValidate</span><span class="p">(</span><span class="o">!.</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">count</span><span class="p">(</span><span class="mi">3</span><span class="o">...</span><span class="p">))</span>
+         <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"Failed"</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">tryValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">validator</span><span class="p">:</span> <span class="kt">Validator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The validator to use to validate the upstream output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE11tryValidateyAD013TryValidationB0VyxG0C09ValidatorVyqd__Gyc6OutputQzRsd__AI05BasicG5ErrorV7FailureRtzlF"></a>
+                    <a name="//apple_ref/swift/Method/tryValidate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE11tryValidateyAD013TryValidationB0VyxG0C09ValidatorVyqd__Gyc6OutputQzRsd__AI05BasicG5ErrorV7FailureRtzlF">tryValidate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid objects or a <code>BasicValidationError</code> downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">tryValidate</span> <span class="p">{</span> <span class="o">!.</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">count</span><span class="p">(</span><span class="mi">3</span><span class="o">...</span><span class="p">)</span> <span class="p">}</span>
+         <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"Failed"</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">tryValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">validator</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that returns the validator to use to validate the upstream output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE11tryValidateAD013TryValidationB0VyxGy0C011ValidatableRd__6OutputQzRsd__AI05BasicG5ErrorV7FailureRtzlF"></a>
+                    <a name="//apple_ref/swift/Method/tryValidate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE11tryValidateAD013TryValidationB0VyxGy0C011ValidatableRd__6OutputQzRsd__AI05BasicG5ErrorV7FailureRtzlF">tryValidate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output that is <code>Validatable</code> and sends valid objects or a <code>BasicValidationError</code> downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="kt">MyValidatable</span><span class="p">())</span>
+         <span class="o">.</span><span class="nf">tryValidate</span><span class="p">()</span>
+         <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">MyValidatable</span><span class="p">(</span><span class="s">"Failed"</span><span class="p">))</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">tryValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Validatable</span><span class="p">,</span> <span class="kt">T</span> <span class="o">==</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE11tryValidate4name_AD013TryValidationB0VyxGSS_yqd__Kct6OutputQzRsd__0C005BasicH5ErrorV7FailureRtzlF"></a>
+                    <a name="//apple_ref/swift/Method/tryValidate(name:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE11tryValidate4name_AD013TryValidationB0VyxGSS_yqd__Kct6OutputQzRsd__0C005BasicH5ErrorV7FailureRtzlF">tryValidate(name:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that creates a custom <code>Validator</code> to validate upstream output and sends valid objects or an <code>Error</code> downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+         <span class="o">.</span><span class="nf">tryValidate</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"only foo-bar"</span><span class="p">)</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+             <span class="k">guard</span> <span class="n">string</span><span class="o">.</span><span class="nf">lowercased</span><span class="p">()</span> <span class="o">==</span> <span class="s">"foo-bar"</span> <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">throw</span> <span class="kt">MyError</span><span class="p">()</span>
+              <span class="p">}</span>
+         <span class="p">}</span>
+         <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"Failed"</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">tryValidate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">closure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name for the custom validator</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>closure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure used to validate the output from the upstream publisher.  This closure should throw an error on invalid
+         objects or return <code>Void</code> for valid objects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/TryValidationPublisher.html">TryValidationPublisher</a></code>  that sends valid non-nil objects donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE8validateyAD010ValidationB0VyxG0C09ValidatorVyqd__G6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/validate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE8validateyAD010ValidationB0VyxG0C09ValidatorVyqd__G6OutputQzRsd__lF">validate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid or <code>nil</code> objects downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+         <span class="o">.</span><span class="nf">validate</span><span class="p">(</span><span class="o">!.</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">count</span><span class="p">(</span><span class="mi">3</span><span class="o">...</span><span class="p">))</span>
+         <span class="o">.</span><span class="nf">replaceNil</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"Failed"</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">validate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">validator</span><span class="p">:</span> <span class="kt">Validator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The validator to use to validate the upstream output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></code>  that sends valid objects or <code>nil</code> donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE8validateyAD010ValidationB0VyxG0C09ValidatorVyqd__Gyc6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/validate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE8validateyAD010ValidationB0VyxG0C09ValidatorVyqd__Gyc6OutputQzRsd__lF">validate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output and sends valid or <code>nil</code> objects downstream.</p>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">validate</span> <span class="p">{</span> <span class="o">!.</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">count</span><span class="p">(</span><span class="mi">3</span><span class="o">...</span><span class="p">)</span> <span class="p">}</span>
+         <span class="o">.</span><span class="nf">replaceNil</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"Failed"</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">validate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">validator</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that returns a validator to use to validate the upstream output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></code>  that sends valid objects or <code>nil</code> donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE8validateAD010ValidationB0VyxGy0C011ValidatableRd__6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/validate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE8validateAD010ValidationB0VyxGy0C011ValidatableRd__6OutputQzRsd__lF">validate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that validates upstream output that is <code>Validatable</code> and sends valid  or <code>nil</code> objects downstream.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code>Validatable</code></p>
+
+</div>
+<pre class="highlight swift"><code>     <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="kt">MyValidatable</span><span class="p">())</span>
+         <span class="o">.</span><span class="nf">validate</span><span class="p">()</span>
+         <span class="o">.</span><span class="nf">replaceNil</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">MyValidatable</span><span class="p">(</span><span class="s">"Failed"</span><span class="p">))</span>
+         <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+     <span class="c1">// "Failed"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">validate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Validatable</span><span class="p">,</span> <span class="kt">T</span> <span class="o">==</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></code>  that sends valid objects or <code>nil</code> donwstream.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Combine9PublisherP0A11ValidationsE8validate4name_AD010ValidationB0VyxGSS_qd__Sgqd__ct6OutputQzRsd__lF"></a>
+                    <a name="//apple_ref/swift/Method/validate(name:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP0A11ValidationsE8validate4name_AD010ValidationB0VyxGSS_qd__Sgqd__ct6OutputQzRsd__lF">validate(name:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Combine</code> operator that creates a custom validator to validate upstream output and sends valid  or <code>nil</code> objects downstream.</p>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code>Validator</code></p>
+<pre class="highlight swift"><code> <span class="n">_</span> <span class="o">=</span> <span class="kt">Just</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+     <span class="o">.</span><span class="nf">validate</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"only foo-bar"</span><span class="p">)</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+         <span class="k">guard</span> <span class="n">string</span><span class="o">.</span><span class="nf">lowercased</span><span class="p">()</span> <span class="o">==</span> <span class="s">"foo-bar"</span> <span class="k">else</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="kc">nil</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="n">string</span>
+     <span class="p">}</span>
+     <span class="o">.</span><span class="nf">replaceNil</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"Failed"</span><span class="p">)</span>
+     <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+ <span class="c1">// "Failed"</span>
+</code></pre>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">validate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">closure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/ValidationPublisher.html">ValidationPublisher</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name for the custom validator.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>closure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Closure that takes an instance and returns the instance if valid or <code>nil</code> if not valid.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Michael</a>. All rights reserved. (Last updated: 2019-09-01)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
