@@ -13,6 +13,8 @@
  
  */
 public enum ValidationPublisherError: Error {
+    
+    /// Thrown when a `Subscription` has been cancelled or failed.
     case hasCompleted
 }
 

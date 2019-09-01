@@ -129,6 +129,12 @@ final class CombineValidationsTests: XCTestCase {
         
         subject.send("fo")
         cancellable.cancel()
+        
+        let subject2 = PassthroughValidatedSubject(String.self) { !.empty && .count(3...) }
+        let cancellable2 = subject.sink { XCTAssertEqual($0, "foo-bar") }
+        
+        subject2.send("foo-bar")
+        cancellable2.cancel()
     }
     
     func testCompactValidate() {

@@ -13,6 +13,10 @@ A package of `Combine` operators for validating objects, such as `name`, `email`
 This includes a stripped down fork of [vapor/validation](https://github.com/vapor/validation), check out their documentation
 for more examples.
 
+## Documentation
+-------------
+
+For full API documentation you can click [here](https://m-housh.github.io/CombineValidations/index.html).
 
 ## Usage
 -----------
