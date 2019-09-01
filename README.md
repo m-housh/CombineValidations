@@ -18,6 +18,37 @@ for more examples.
 
 For full API documentation you can click [here](https://m-housh.github.io/CombineValidations/index.html).
 
+
+## Installation
+-----------
+Just add as a package dependency to your Xcode Project or to your `Package.swift`.
+```
+// swift-tools-version:5.1
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "MyProject",
+    platforms: [
+        .macOS(.v10_15)
+        .iOS(.v13)
+    ],
+    ...
+    dependencies: [
+        .package(url: "https://github.com/m-housh/CombineValidations.git", from: "0.1.0"),
+    ],
+    targets: [
+        .target(
+            name: "MyProject",
+            dependencies: ["CombineValidations", ...]
+        ),
+        ...
+    ]
+)
+
+```
+
 ## Usage
 -----------
 
